@@ -14,3 +14,9 @@ variables:
 steps:
 - script: |
    echo $(db)
+- bash: echo "#vso[task.setvariable variable=db]db"   
+- script: |
+   echo $(db)
+- script: |
+   echo ${{variables.db}}   
+
