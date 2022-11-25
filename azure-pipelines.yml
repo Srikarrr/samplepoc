@@ -10,13 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  db: server
-steps:
-- script: |
-   echo $(db)
-- bash: echo "#vso[task.setvariable variable=db]server1000"   
-- script: |
-   echo $(db)
-- script: |
-   echo ${{variables.db}}   
+  databaseServerName: server4000
 
+steps:
+  - script: |
+      echo $(databaseServerName)
+  - bash: echo "##vso[task.setvariable variable=databaseServerName]server5000"
+  - script: |
+      echo $(databaseServerName)  
+  - script: |
+      echo ${{ variables.databaseServerName }}  
